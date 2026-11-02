@@ -1,8 +1,15 @@
 # VS Code
 .vscode/
 
-# _site
+# Jekyll build output and caches
 _site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
 
-# .jekyll-cache
-.jekyyll-cache/
+# Bundler (gems are installed into vendor/bundle by scripts/serve.sh)
+.bundle/
+vendor/
+
+# Never commit ROMs
+*.gba

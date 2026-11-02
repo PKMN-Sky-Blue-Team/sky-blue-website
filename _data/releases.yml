@@ -1,0 +1,21 @@
+# ---------------------------------------------------------------------------
+# Every published version of Pokémon Sky Blue. The download page offers the
+# release with the newest `date`; the changelog lists all of them.
+#
+# Fields:
+#   version  (required) Version label shown to players, e.g. "1.0.0".
+#   date     (required) Release date, YYYY-MM-DD.
+#   patch    (required) Path to the BPS file in this repository, e.g.
+#                       /patches/sky-blue-1.0.0.bps
+#   notes    (optional) List of changes; Markdown is allowed in each item.
+#
+# For the first release, replace the `[]` at the bottom of this file with the
+# example below (without the `#`s). Add later releases as more list entries.
+#
+# - version: "1.0.0"
+#   date: 2027-01-01
+#   patch: /patches/sky-blue-1.0.0.bps
+#   notes:
+#     - First public release.
+# ---------------------------------------------------------------------------
+[]

@@ -1,0 +1,9 @@
+{%- comment -%}
+  Sets up the language context for the current page. Included once by the
+  default layout; the variables it assigns are then available everywhere:
+    lang — the page's language code (front matter `lang`, else site.lang)
+    t    — that language's strings from _data/i18n/<lang>.yml, falling back to
+           the default language if the file does not exist
+{%- endcomment -%}
+{%- assign lang = page.lang | default: site.lang -%}
+{%- assign t = site.data.i18n[lang] | default: site.data.i18n[site.lang] -%}

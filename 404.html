@@ -1,0 +1,9 @@
+---
+ref: not-found
+title: Page not found
+permalink: /404.html
+---
+{%- include i18n.html -%}
+<h1>{{ t.not_found.title }}</h1>
+<p>{{ t.not_found.body }}</p>
+<p><a href="{% include url-for.html ref="home" %}">{{ t.not_found.home }}</a></p>

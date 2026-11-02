@@ -1,0 +1,15 @@
+# ---------------------------------------------------------------------------
+# People and projects shown on the Credits page, in display order.
+#
+# Fields:
+#   name  (required) Name or handle.
+#   role  (required) What they contributed, e.g. "Mapping" or "Music".
+#   link  (optional) A URL to their profile or project.
+#
+# Example:
+#
+# - name: Your Name
+#   role: Project lead
+#   link: https://github.com/your-name
+# ---------------------------------------------------------------------------
+[]
