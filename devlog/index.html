@@ -1,0 +1,22 @@
+---
+ref: devlog
+title: Devlog
+---
+{%- include i18n.html -%}
+{%- assign posts = site.posts | where: "lang", lang -%}
+<h1>{{ page.title }}</h1>
+{%- if posts.size > 0 %}
+<ul class="post-list">
+  {%- for post in posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+    {%- if post.excerpt %}
+    <div class="post-list__excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</div>
+    {%- endif %}
+  </li>
+  {%- endfor %}
+</ul>
+{%- else %}
+<p>{{ t.devlog.empty }}</p>
+{%- endif %}

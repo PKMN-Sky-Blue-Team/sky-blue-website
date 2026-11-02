@@ -1,5 +1,12 @@
-- { title: Home, url: / }
-- { title: FAQ, url: /faq/ }
-- { title: Devlog, url: /devlog/ }
-- { title: Download, url: /download/ }
-- { title: About us, url: /about/ }
+# Main navigation, in display order.
+#   key: matches the `ref` front matter of the page it links to, and the label
+#        under `nav:` in _data/i18n/<lang>.yml.
+# The link goes to the page in the visitor's current language when one exists,
+# otherwise to the default-language page.
+- key: home
+- key: download
+- key: devlog
+- key: changelog
+- key: faq
+- key: about
+- key: credits

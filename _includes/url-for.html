@@ -1,0 +1,9 @@
+{%- comment -%}
+  Outputs the URL of the page whose front matter has `ref: <include.ref>`,
+  preferring the version in the current language and falling back to the
+  default language. Usage: {% include url-for.html ref="download" %}
+{%- endcomment -%}
+{%- assign _candidates = site.pages | where: "ref", include.ref -%}
+{%- assign _target = _candidates | where: "lang", lang | first -%}
+{%- unless _target -%}{%- assign _target = _candidates | where: "lang", site.lang | first -%}{%- endunless -%}
+{%- if _target -%}{{ _target.url | relative_url }}{%- else -%}{{ "/" | relative_url }}{%- endif -%}

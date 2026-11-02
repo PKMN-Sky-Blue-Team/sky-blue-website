@@ -4,9 +4,18 @@
 *.ts text eol=lf
 *.css text eol=lf
 *.md text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.sh text eol=lf
+Gemfile text eol=lf
+Gemfile.lock text eol=lf
 
 # Assets
 *.png binary
 *.ogg binary
 *.mp3 binary
 *.mp4 binary
+
+# Patches and ROMs
+*.bps binary
+*.gba binary

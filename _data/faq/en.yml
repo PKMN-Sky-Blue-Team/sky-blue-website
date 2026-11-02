@@ -1,0 +1,45 @@
+# ---------------------------------------------------------------------------
+# Frequently asked questions (English). Answers are Markdown.
+# Translations go in _data/faq/<lang>.yml with the same structure; a language
+# without its own file falls back to this one.
+# ---------------------------------------------------------------------------
+- q: What do I need to play Pokémon Sky Blue?
+  a: >-
+    A clean, unmodified **Pokémon Emerald (USA)** ROM that you dumped from your
+    own cartridge, and a Game Boy Advance emulator or flash cart.
+
+- q: Why can't I download the game directly?
+  a: >-
+    Distributing Pokémon ROMs is copyright infringement, so this site only
+    hosts a *patch* — the changes Sky Blue makes. The patch is applied to your
+    own ROM to produce the game.
+
+- q: Is my ROM uploaded anywhere?
+  a: >-
+    No. The patcher on the [download page](../download/) runs entirely in your
+    browser. Your ROM is read and patched on your device and never sent to a
+    server.
+
+- q: How do I know if my ROM is the right one?
+  a: >-
+    The download page checks it for you. A clean Pokémon Emerald (USA) ROM is
+    16,777,216 bytes with CRC32 `1F1C08FB` and SHA-1
+    `f3ae088181bf583e55daf962a92bb46f4f1d07b7`. Trimmed, compressed (.zip/.7z)
+    or previously patched ROMs will not work.
+
+- q: Can I patch the ROM myself instead?
+  a: >-
+    Yes. The download page links the `.bps` patch file directly. Apply it to
+    your clean ROM with any BPS-compatible patcher, such as Floating IPS
+    (Flips).
+
+- q: Which emulator should I use?
+  a: >-
+    Any accurate Game Boy Advance emulator works. [mGBA](https://mgba.io/) is a
+    good choice on desktop and is available for many platforms.
+
+- q: How do I update to a new version?
+  a: >-
+    Patch a fresh copy of your clean Emerald ROM with the new release — patches
+    are always applied to the original ROM, never to an older Sky Blue ROM.
+    Check the [changelog](../changelog/) for notes on save compatibility.

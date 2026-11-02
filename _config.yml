@@ -1,3 +1,51 @@
+# ---------------------------------------------------------------------------
+# Site settings. Restart `jekyll serve` after editing this file — it is not
+# reloaded automatically.
+# ---------------------------------------------------------------------------
 title: Pokémon Sky Blue
+description: A ROM hack of Pokémon Emerald.
+
+# GitHub Pages serves this repository at https://<owner>.github.io/<repo>/,
+# so every internal link is built with the `relative_url` filter.
+url: "https://pkmn-sky-blue-team.github.io"
 baseurl: "/sky-blue-website"
-exclude: [README.md]
+github_repo_url: "https://github.com/PKMN-Sky-Blue-Team/sky-blue-website"
+
+# Default language. Other languages are added with a file in _data/i18n/ and a
+# `defaults` scope below — see "Translations" in README.md.
+lang: en
+
+markdown: kramdown
+
+# GitHub Pages applies a default theme unless told not to; this site ships its
+# own layouts and CSS.
+theme: null
+permalink: /devlog/:year/:month/:day/:title/
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - scripts/
+  - tests/
+
+defaults:
+  # Every page uses the default layout and the default language unless its
+  # front matter (or a more specific scope below) says otherwise.
+  - scope:
+      path: ""
+    values:
+      layout: default
+      lang: en
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      lang: en
+  # Example for a translated section — uncomment and copy per language:
+  # - scope:
+  #     path: "es"
+  #   values:
+  #     lang: es

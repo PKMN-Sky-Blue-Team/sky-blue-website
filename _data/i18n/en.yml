@@ -1,0 +1,99 @@
+# ---------------------------------------------------------------------------
+# English interface strings. Every piece of text the templates show (that is
+# not page content) comes from here. To add a language, copy this file to
+# <code>.yml (e.g. es.yml) and translate the values — never the keys.
+# ---------------------------------------------------------------------------
+language_name: English   # shown in the language switcher, in its own language
+dir: ltr                 # text direction: ltr or rtl
+
+skip_to_content: Skip to main content
+nav_label: Main
+language_switcher_label: Language
+site_home_label: home page
+
+nav:
+  home: Home
+  faq: FAQ
+  devlog: Devlog
+  changelog: Changelog
+  download: Download
+  about: About us
+  credits: Credits
+
+footer:
+  disclaimer: >-
+    Pokémon Sky Blue is a non-commercial fan project. It is not affiliated with
+    or endorsed by Nintendo, Game Freak, Creatures Inc. or The Pokémon Company.
+    This site does not host or distribute ROMs.
+  source: Source code on GitHub
+
+home:
+  latest_release: "Latest release: %version%"
+  get_it: Download and patch
+  no_release: No release is available yet. Keep an eye on the devlog!
+  recent_posts: Recent devlog posts
+  all_posts: All devlog posts
+
+devlog:
+  empty: No devlog posts yet.
+  by: by
+  previous: Previous post
+  next: Next post
+  back: Back to the devlog
+
+changelog:
+  empty: No releases yet.
+  released: Released
+  download: Download this patch (.bps)
+
+faq:
+  empty: No questions yet.
+
+credits:
+  empty: The credits list is coming soon.
+
+not_found:
+  title: Page not found
+  body: Sorry, that page doesn't exist.
+  home: Go to the home page
+
+download:
+  no_release: >-
+    No release is available yet. Once the first version is published, you will
+    be able to patch it here.
+  version: "Version %version%, released %date%"
+  intro: >-
+    Choose your own clean Pokémon Emerald (USA) ROM. It is patched entirely in
+    your browser — the file never leaves your device.
+  manual: "Prefer to patch it yourself? Download the BPS patch directly"
+  changelog_link: See what's new in the changelog
+  noscript: >-
+    The in-browser patcher needs JavaScript. You can still download the BPS
+    patch below and apply it with a patcher such as Floating IPS (Flips).
+
+# Strings used by the in-browser patcher (assets/js/patcher.js). These are
+# passed to JavaScript as JSON; %name% placeholders are filled in by the script.
+patcher:
+  rom_label: Your Pokémon Emerald ROM (.gba)
+  patch_button: Patch and download
+  patch_button_disabled: Choose a ROM file first.
+  rom_info: "%name% — %size% bytes, CRC32 %crc%"
+  rom_ok: This looks like a clean Pokémon Emerald (USA) ROM.
+  rom_unknown: >-
+    This ROM was not recognised as a clean Pokémon Emerald (USA) ROM, so
+    patching will probably fail. Make sure it is unmodified and not trimmed.
+  reading: Reading your ROM…
+  downloading: Downloading the patch…
+  patching: Patching…
+  done: "Done! %filename% has been saved by your browser."
+  error_prefix: "Patching failed:"
+  errors:
+    read-failed: Your ROM file could not be read.
+    fetch-failed: The patch could not be downloaded. Check your connection and try again.
+    invalid-patch: The patch file is not a valid BPS patch.
+    patch-checksum: The patch file is corrupted. Try reloading the page.
+    source-size: Your ROM is the wrong size. It must be an unmodified Pokémon Emerald (USA) ROM.
+    source-checksum: Your ROM does not match. It must be an unmodified Pokémon Emerald (USA) ROM.
+    corrupt-patch: The patch file is damaged and could not be applied.
+    target-checksum: The patched ROM failed its integrity check. Please report this.
+    unknown: Something unexpected went wrong.

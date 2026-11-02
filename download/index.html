@@ -1,0 +1,46 @@
+---
+ref: download
+title: Download
+scripts:
+  - /assets/js/crc32.js
+  - /assets/js/bps.js
+  - /assets/js/patcher.js
+---
+{%- include i18n.html -%}
+{%- assign release = site.data.releases | sort: "date" | last -%}
+<h1>{{ page.title }}</h1>
+
+{%- if release %}
+{%- capture release_date %}<time datetime="{{ release.date | date: '%Y-%m-%d' }}">{{ release.date | date: "%Y-%m-%d" }}</time>{% endcapture %}
+<p class="release__meta">{{ t.download.version | replace: "%version%", release.version | replace: "%date%", release_date }}</p>
+<p>{{ t.download.intro }}</p>
+
+<noscript><p class="notice">{{ t.download.noscript }}</p></noscript>
+
+<form class="patcher" id="patcher" hidden
+      data-patch-url="{{ release.patch | relative_url }}"
+      data-version="{{ release.version }}">
+  <div class="field">
+    <label for="rom-input">{{ t.patcher.rom_label }}</label>
+    <input type="file" id="rom-input" accept=".gba,application/octet-stream" aria-describedby="rom-status">
+  </div>
+
+  {%- comment -%} Announces the ROM check result to screen readers. {%- endcomment %}
+  <p id="rom-status" class="status" role="status" aria-live="polite"></p>
+
+  <div class="field">
+    <button type="submit" class="button" id="patch-button" aria-disabled="true" aria-describedby="patch-button-hint">{{ t.patcher.patch_button }}</button>
+    <p id="patch-button-hint" class="hint">{{ t.patcher.patch_button_disabled }}</p>
+  </div>
+
+  <p id="patch-status" class="status" role="status" aria-live="polite"></p>
+  <p id="patch-error" class="status status--error" role="alert"></p>
+</form>
+
+<script type="application/json" id="patcher-strings">{{ t.patcher | jsonify }}</script>
+
+<p><a href="{{ release.patch | relative_url }}" download>{{ t.download.manual }} (.bps)</a></p>
+<p><a href="{% include url-for.html ref="changelog" %}">{{ t.download.changelog_link }}</a></p>
+{%- else %}
+<p>{{ t.download.no_release }}</p>
+{%- endif %}

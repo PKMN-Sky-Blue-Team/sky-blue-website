@@ -1,0 +1,13 @@
+---
+ref: about
+title: About us
+---
+{%- include i18n.html -%}
+<h1>{{ page.title }}</h1>
+
+{%- comment -%}
+  Write about the project and the team here. This page's text is content, not
+  interface, so a translation is a copy of this file under /<lang>/about/.
+{%- endcomment %}
+<p>{{ site.title }} — {{ site.description }}</p>
+<p><a href="{% include url-for.html ref="credits" %}">{{ t.nav.credits }}</a></p>

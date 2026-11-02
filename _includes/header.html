@@ -1,0 +1,40 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-title" href="{% include url-for.html ref="home" %}">
+      {{ site.title }}<span class="visually-hidden"> — {{ t.site_home_label }}</span>
+    </a>
+
+    <nav class="site-nav" aria-label="{{ t.nav_label }}">
+      <ul>
+        {%- for item in site.data.navigation %}
+        {%- capture item_url %}{% include url-for.html ref=item.key %}{% endcapture %}
+        {%- assign current_url = page.url | relative_url %}
+        {%- if page.ref == item.key or current_url == item_url %}{% assign is_current = true %}{% else %}{% assign is_current = false %}{% endif %}
+        {%- if page.layout == "post" and item.key == "devlog" %}{% assign is_section = true %}{% else %}{% assign is_section = false %}{% endif %}
+        <li><a href="{{ item_url }}"{% if is_current %} aria-current="page"{% elsif is_section %} class="is-section"{% endif %}>{{ t.nav[item.key] | default: item.key }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+
+    {%- if page.ref %}
+    {%- assign translations = site.pages | where: "ref", page.ref %}
+    {%- if translations.size > 1 %}
+    <nav class="language-switcher" aria-label="{{ t.language_switcher_label }}">
+      <ul>
+        {%- for version in translations %}
+        {%- assign version_lang = version.lang | default: site.lang %}
+        {%- assign version_t = site.data.i18n[version_lang] %}
+        <li>
+          {%- if version_lang == lang %}
+          <a href="{{ version.url | relative_url }}" aria-current="page" lang="{{ version_lang }}" hreflang="{{ version_lang }}">{{ version_t.language_name | default: version_lang }}</a>
+          {%- else %}
+          <a href="{{ version.url | relative_url }}" lang="{{ version_lang }}" hreflang="{{ version_lang }}">{{ version_t.language_name | default: version_lang }}</a>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    {%- endif %}
+    {%- endif %}
+  </div>
+</header>

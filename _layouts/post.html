@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{%- include i18n.html -%}
+<article class="post">
+  <header class="post__header">
+    <h1>{{ page.title }}</h1>
+    <p class="post__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      {%- if page.author %} · {{ t.devlog.by }} {{ page.author }}{% endif %}
+    </p>
+  </header>
+
+  <div class="post__content">
+    {{ content }}
+  </div>
+
+  <nav class="post__nav" aria-label="{{ t.nav.devlog }}">
+    <ul>
+      {%- if page.previous %}
+      <li><a href="{{ page.previous.url | relative_url }}" rel="prev">{{ t.devlog.previous }}: {{ page.previous.title }}</a></li>
+      {%- endif %}
+      {%- if page.next %}
+      <li><a href="{{ page.next.url | relative_url }}" rel="next">{{ t.devlog.next }}: {{ page.next.title }}</a></li>
+      {%- endif %}
+      <li><a href="{% include url-for.html ref="devlog" %}">{{ t.devlog.back }}</a></li>
+    </ul>
+  </nav>
+</article>
