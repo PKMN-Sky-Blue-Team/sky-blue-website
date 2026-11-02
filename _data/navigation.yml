@@ -1,0 +1,5 @@
+- { title: Home, url: / }
+- { title: FAQ, url: /faq/ }
+- { title: Devlog, url: /devlog/ }
+- { title: Download, url: /download/ }
+- { title: About us, url: /about/ }

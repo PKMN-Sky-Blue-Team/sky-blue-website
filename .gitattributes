@@ -1,0 +1,12 @@
+# Code files
+*.html text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+
+# Assets
+*.png binary
+*.ogg binary
+*.mp3 binary
+*.mp4 binary
